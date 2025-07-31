@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>যোগাযোগ - ডাঃ মোস্তফা মেডিকেল ইনস্টিটিউট</title>
+    <meta name="description" content="ডাঃ মোস্তফা মেডিকেল ইনস্টিটিউটের সাথে যোগাযোগ করুন। আমাদের ঠিকানা, ফোন নম্বর এবং ইমেইল।">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <h1>ডাঃ মোস্তফা মেডিকেল ইনস্টিটিউট</h1>
+                </a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">হোম</a>
+                <a href="branches.html" class="nav-link">ব্রাঞ্চসমূহ</a>
+                <a href="courses.html" class="nav-link">কোর্সসমূহ</a>
+                <a href="teachers.html" class="nav-link">শিক্ষকবৃন্দ</a>
+                <a href="staff.html" class="nav-link">স্টাফ</a>
+                <a href="batches.html" class="nav-link">সফল ব্যাচ</a>
+                <a href="contact.html" class="nav-link active">যোগাযোগ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">যোগাযোগ করুন</h1>
+            <p class="page-subtitle">আমাদের সাথে যোগাযোগ করুন এবং আপনার প্রশ্নের উত্তর পান</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>আমাদের কাছে বার্তা পাঠান</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">নাম *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">ইমেইল *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">ফোন নম্বর *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="course">আগ্রহের কোর্স</label>
+                            <select id="course" name="course">
+                                <option value="">কোর্স নির্বাচন করুন</option>
+                                <option value="dmf">DMF (১ বছর)</option>
+                                <option value="lmf">LMF (৬ মাস)</option>
+                                <option value="paramedical">প্যারামেডিকেল (১ বছর)</option>
+                                <option value="dental">ডেন্টাল (৬ মাস)</option>
+                                <option value="nursing">জুনিয়র নার্সিং (১ বছর)</option>
+                                <option value="mch">MCH (৩ মাস)</option>
+                                <option value="veterinary">ভেটেরিনারি (৬ মাস)</option>
+                                <option value="caregiving">কেয়ার গিভিং/নার্সিং (৬ মাস)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="branch">পছন্দের ব্রাঞ্চ</label>
+                            <select id="branch" name="branch">
+                                <option value="">ব্রাঞ্চ নির্বাচন করুন</option>
+                                <option value="dhaka">ঢাকা ব্রাঞ্চ (প্রধান)</option>
+                                <option value="chittagong">চট্টগ্রাম ব্রাঞ্চ</option>
+                                <option value="sylhet">সিলেট ব্রাঞ্চ</option>
+                                <option value="rajshahi">রাজশাহী ব্রাঞ্চ</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">বার্তা *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="আপনার প্রশ্ন বা মন্তব্য লিখুন..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> বার্তা পাঠান
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-container">
+                    <h2>যোগাযোগের তথ্য</h2>
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>প্রধান ঠিকানা</h3>
+                                <p>১২৩/এ, ধানমন্ডি<br>ঢাকা-১২০৫, বাংলাদেশ</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>ফোন নম্বর</h3>
+                                <p>+880 1935-255404<br>+880 2-9876543</p>
+                                <a href="tel:+8801712345678" class="contact-link">কল করুন</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>ইমেইল</h3>
+                                <p>info@drmostafamedical.com<br>admission@drmostafamedical.com</p>
+                                <a href="mailto:info@drmostafamedical.com" class="contact-link">ইমেইল পাঠান</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>WhatsApp</h3>
+                                <p>+880 1935-255404</p>
+                                <a href="https://wa.me/8801712345678" target="_blank" class="contact-link">WhatsApp এ মেসেজ করুন</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>অফিস সময়</h3>
+                                <p>সকাল ৮:০০ - সন্ধ্যা ৬:০০<br>শনিবার - বৃহস্পতিবার<br>শুক্রবার বন্ধ</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>সোশ্যাল মিডিয়া</h3>
+                                <div class="social-buttons">
+                                    <a href="#" target="_blank" class="social-btn facebook-btn">
+                                        <i class="fab fa-facebook-f"></i>
+                                        <span>Facebook</span>
+                                    </a>
+                                    <a href="#" target="_blank" class="social-btn instagram-btn">
+                                        <i class="fab fa-instagram"></i>
+                                        <span>Instagram</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>প্রায়শই জিজ্ঞাসিত প্রশ্ন</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>ভর্তির জন্য কী কী যোগ্যতা প্রয়োজন?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>সকল কোর্সের জন্য ন্যূনতম এসএসসি বা সমমান পাস হতে হবে। কিছু কোর্সের জন্য বিশেষ যোগ্যতার প্রয়োজন হতে পারে।</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>কোর্স ফি কিস্তিতে দেওয়া যাবে কি?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>হ্যাঁ, সকল কোর্সের ফি কিস্তিতে পরিশোধ করা যাবে। বিস্তারিত জানতে আমাদের সাথে যোগাযোগ করুন।</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>কোর্স সম্পন্নের পর চাকরির নিশ্চয়তা আছে কি?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>আমরা চাকরির ক্ষেত্রে সর্বোচ্চ সহায়তা প্রদান করি। আমাদের ৯৫% গ্র্যাজুয়েট কোর্স সম্পন্নের পর চাকরি পেয়েছেন।</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>ক্লাসের সময়সূচী কেমন?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>সকাল ৮টা থেকে বিকেল ৫টা পর্যন্ত ক্লাস হয়। সপ্তাহে ৬ দিন ক্লাস এবং শুক্রবার ছুটি।</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>হোস্টেল সুবিধা আছে কি?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>বর্তমানে আমাদের নিজস্ব হোস্টেল নেই, তবে আমরা আশেপাশের ভাল হোস্টেলের তথ্য প্রদান করি।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ডাঃ মোস্তফা মেডিকেল ইনস্টিটিউট</h3>
+                    <p>বাংলাদেশের অগ্রণী মেডিকেল শিক্ষা প্রতিষ্ঠান</p>
+                    <div class="social-links">
+                        <a href="https://bio.link/officialenayet" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://bio.link/officialenayet" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://bio.link/officialenayet" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/8801935255404" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>দ্রুত লিংক</h4>
+                    <ul>
+                        <li><a href="courses.html">কোর্সসমূহ</a></li>
+                        <li><a href="branches.html">ব্রাঞ্চসমূহ</a></li>
+                        <li><a href="teachers.html">শিক্ষকবৃন্দ</a></li>
+                        <li><a href="contact.html">যোগাযোগ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>যোগাযোগ</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +880 1935-255404</p>
+                        <p><i class="fas fa-envelope"></i> info@drmostafamedical.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> ঢাকা, বাংলাদেশ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ডাঃ মোস্তফা মেডিকেল ইনস্টিটিউট। সকল অধিকার সংরক্ষিত।</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const course = formData.get('course');
+            const branch = formData.get('branch');
+            const message = formData.get('message');
+            
+            // Create WhatsApp message
+            const whatsappMessage = `নাম: ${name}
+ইমেইল: ${email}
+ফোন: ${phone}
+আগ্রহের কোর্স: ${course || 'উল্লেখ করা হয়নি'}
+পছন্দের ব্রাঞ্চ: ${branch || 'উল্লেখ করা হয়নি'}
+বার্তা: ${message}`;
+            
+            // Send to WhatsApp
+            const phoneNumber = '8801712345678';
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+            window.open(whatsappUrl, '_blank');
+            
+            // Show success message
+            alert('আপনার বার্তা WhatsApp এ পাঠানো হচ্ছে...');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const answer = faqItem.querySelector('.faq-answer');
+                const icon = question.querySelector('i');
+                
+                // Toggle active class
+                faqItem.classList.toggle('active');
+                
+                // Toggle answer visibility
+                if (faqItem.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    answer.style.maxHeight = '0';
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
