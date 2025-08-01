@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সার্টিফিকেট যাচাই - ডাঃ মোস্তফা মেডিকেল ইনস্টিটিউট</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .search-section {
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .search-box {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto 30px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            outline: none;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .search-input:focus {
+            border-color: #4facfe;
+            box-shadow: 0 0 20px rgba(79, 172, 254, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .search-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .result-section {
+            padding: 0 30px 40px;
+            display: none;
+        }
+
+        .result-card {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-table th,
+        .result-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .result-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .result-table td {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .status-pass {
+            color: #27ae60;
+            font-weight: bold;
+            background: rgba(39, 174, 96, 0.1);
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        .status-fail {
+            color: #e74c3c;
+            font-weight: bold;
+            background: rgba(231, 76, 60, 0.1);
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        .error-message {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            color: #721c24;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                margin: 10px;
+            }
+            
+            .result-table th,
+            .result-table td {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>আপনার সার্টিফিকেট যাচাই করুন</h1>
+            <p>Verify Your Certificate</p>
+        </div>
+
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="certificateNumber" class="search-input" placeholder="সার্টিফিকেট নাম্বার লিখুন (১-১২০০)" maxlength="4">
+            </div>
+            <button onclick="searchCertificate()" class="search-btn">
+                <span id="searchText">যাচাই করুন</span>
+            </button>
+        </div>
+
+        <div id="resultSection" class="result-section">
+            <div id="resultContent"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; ২০২৫ ডাঃ মোস্তফা মেডিকেল ইনস্টিটিউট। সকল অধিকার সংরক্ষিত।</p>
+    </div>
+
+    <script>
+        let studentsData = [];
+
+        // Load data from JSON files
+        async function loadData() {
+            try {
+                const [response1, response2] = await Promise.all([
+                    fetch('data.json'),
+                    fetch('data2.json')
+                ]);
+                const data1 = await response1.json();
+                const data2 = await response2.json();
+                studentsData = data1.concat(data2);
+            } catch (error) {
+                console.error('Error loading data:', error);
+            }
+        }
+
+        // Initialize data loading
+        loadData();
+
+        function searchCertificate() {
+            const certificateNumber = document.getElementById('certificateNumber').value.trim();
+            const resultSection = document.getElementById('resultSection');
+            const resultContent = document.getElementById('resultContent');
+            const searchBtn = document.querySelector('.search-btn');
+            const searchText = document.getElementById('searchText');
+
+            if (!certificateNumber) {
+                showError('অনুগ্রহ করে সার্টিফিকেট নাম্বার লিখুন');
+                return;
+            }
+
+            // Show loading state
+            searchText.innerHTML = '<span class="loading"></span>খোঁজা হচ্ছে...';
+            searchBtn.disabled = true;
+
+            // Simulate loading delay
+            setTimeout(() => {
+                const student = studentsData.find(s => s.certificate_number === certificateNumber);
+
+                if (student) {
+                    showResult(student);
+                } else {
+                    showError('এই নাম্বরের কোনো সার্টিফিকেট পাওয়া যায়নি। অনুগ্রহ করে সঠিক নাম্বার দিন।');
+                }
+
+                // Reset button state
+                searchText.textContent = 'যাচাই করুন';
+                searchBtn.disabled = false;
+            }, 1000);
+        }
+
+        function showResult(student) {
+            const resultSection = document.getElementById('resultSection');
+            const resultContent = document.getElementById('resultContent');
+
+            const statusClass = student.status === 'উত্তীর্ণ' ? 'status-pass' : 'status-fail';
+
+            resultContent.innerHTML = `
+                <div class="result-card">
+                    <table class="result-table">
+                        <thead>
+                            <tr>
+                                <th>বিবরণ</th>
+                                <th>তথ্য</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>সার্টিফিকেট নাম্বার</strong></td>
+                                <td>${student.certificate_number}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>কেন্দ্র</strong></td>
+                                <td>${student.institute}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>নাম</strong></td>
+                                <td>${student.name}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>সেশন</strong></td>
+                                <td>${student.session}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>কোর্স</strong></td>
+                                <td>${student.course}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>স্ট্যাটাস</strong></td>
+                                <td><span class="${statusClass}">${student.status}</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            `;
+
+            resultSection.style.display = 'block';
+            resultSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showError(message) {
+            const resultSection = document.getElementById('resultSection');
+            const resultContent = document.getElementById('resultContent');
+
+            resultContent.innerHTML = `<div class="error-message">${message}</div>`;
+            resultSection.style.display = 'block';
+            resultSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Allow Enter key to search
+        document.getElementById('certificateNumber').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchCertificate();
+            }
+        });
+
+        // Only allow numbers in input
+        document.getElementById('certificateNumber').addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+    </script>
+</body>
+</html>
+
