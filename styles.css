@@ -160,58 +160,6 @@ body {
     transition: 0.3s;
 }
 
-.btn {
-    padding: 12px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    display: inline-block;
-    border: 2px solid transparent;
-}
-
-.btn-primary {
-    background: #4CAF50;
-    color: white;
-    border-color: #4CAF50;
-}
-
-.btn-primary:hover {
-    background: transparent;
-    color: #4CAF50;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(76, 175, 80, 0.3);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: #4CAF50;
-    border-color: #4CAF50;
-}
-
-.btn-secondary:hover {
-    background: #4CAF50;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(76, 175, 80, 0.3);
-}
-
-.hero-image {
-    animation: slideInRight 1s ease-out;
-}
-
-.hero-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.hero-image img:hover {
-    transform: scale(1.05);
-}
-
 /* About Section */
 .about {
     padding: 100px 0;
