@@ -44,12 +44,12 @@ async function searchResult() {
     
     // Validation
     if (!admitNumber) {
-        showError('দয়া করে একটি এ্যাডমিট নাম্বার লিখুন।');
+        showError('দয়া করে একটি রেজিস্ট্রেশন নাম্বার লিখুন।');
         return;
     }
     
     if (admitNumber.length < 3) {
-        showError('এ্যাডমিট নাম্বার কমপক্ষে ৩ অক্ষরের হতে হবে।');
+        showError('রেজিস্ট্রেশন নাম্বার কমপক্ষে ৩ অক্ষরের হতে হবে।');
         return;
     }
     
@@ -134,7 +134,7 @@ function showResult(result) {
         <div class="result-item">
             <div class="result-label">
                 <i class="fas fa-id-card"></i>
-                এ্যাডমিট নাম্বার
+                রেজিস্ট্রেশন নাম্বার
             </div>
             <div class="result-value">${result.admitNumber}</div>
         </div>
@@ -162,7 +162,7 @@ function showResult(result) {
         <div class="result-item">
             <div class="result-label">
                 <i class="fas fa-university"></i>
-                প্রতিষ্ঠান
+                কেন্দ্র
             </div>
             <div class="result-value">${result.institution}</div>
         </div>
