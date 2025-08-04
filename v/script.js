@@ -242,11 +242,11 @@ function downloadResult() {
 সার্টিফিকেট ভেরিফিকেশন রিপোর্ট
 =====================================
 
-এ্যাডমিট নাম্বার: ${currentResult.admitNumber}
+রেজিস্ট্রেশন নাম্বার: ${currentResult.admitNumber}
 পরীক্ষার্থীর নাম: ${currentResult.studentName}
 বাবার নাম: ${currentResult.fatherName}
 মায়ের নাম: ${currentResult.motherName}
-প্রতিষ্ঠান: ${currentResult.institution}
+কেন্দ্র: ${currentResult.institution}
 কোর্স: ${currentResult.course}
 রেজাল্ট: ${currentResult.result}
 ${currentResult.sheetNumber ? `ডেটা সোর্স: Sheet ${currentResult.sheetNumber}` : ''}
